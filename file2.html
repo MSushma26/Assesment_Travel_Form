@@ -1,0 +1,162 @@
+
+<html>
+  <head>
+      <style>
+           
+       </style>
+       <link rel="stylesheet" href="style1.css">
+  </head>
+  <body>
+    
+    <form name="myform" onsubmit="return Validpassword()" action="file3.html" method="get">
+
+      <h1 style="text-align:center"><b>Book Your Itenary</b></h1><br><br><br>
+      
+      
+         
+        <div id="Section2">
+   
+     
+       Enter Your Name: <input type="text" class="spl" name="myname" id="newmine" pattern="[a-zA-Z]{3,}" title="Only Alphabets with minimum three" required><br><br>
+       Enter your Mobile Number: <input type="number" class="spl" name="mobile" id="newmine" required><br><br>                  
+       Enter your DOB: <input type="date" class="spl" name="mydate" id="newmine"><br><br><br>
+       Enter your Email: <input type="text" class="spl" name="myemail" id="newmine" required> <br><br>
+       Password: <input type="password" class="spl" name="pass1"><br><br>
+       Confirm Password:<input type="password" class="spl" name="cpass1"><br><br>
+       
+       <div id="subdiv">
+        
+        <input type="radio" name="one" id="One-Way" value="One-Way" onclick=" checkButton()">One-Way<br> <br>
+        <input type="radio" name="one" id="Round-Trip" value="Round-Trip"  onclick=" checkButton()" >Round-Trip<br> <br><br>
+
+        
+            From:<select id="departure" name="departure" required>
+                <option value=" ">   </option>
+                 <option value="melbourne">Melbourne(MEL),Australia</option>
+                 <option value="sydney">Sydney(SYD),Australia</option>
+                 <option value="brisbane">Brisbane(QLD),Australia</option>
+                 <option value="Adelaide">Adelaide(ADL),Australia</option>
+                 <option value="perth">Perth(PERT),Australia</option>
+                 </select>
+           To:<select id="departure" name="departure" required>
+                    <option value=" ">   </option>
+                    <option value="melbourne">Melbourne(MEL),Australia</option>
+                    <option value="sydney">Sydney(SYD),Australia</option>
+                    <option value="brisbane">Brisbane(QLD),Australia</option>
+                    <option value="Adelaide">Adelaide(ADL),Australia</option>
+                    <option value="perth">Perth(PERT),Australia</option>
+       
+             
+            </select><br><br>
+
+            Departure Date:  <input type="date" class="spl" name="mydate" id="newmine">
+            Return Date:  <input type="date" class="spl" name="mydate" id="newmine1">
+        <br><br><br>
+       
+       <a href="file3.html" > <button><h1> Submit Form</h1></button></a>  
+      
+       <img src="emirates.png" ></div>
+       
+       
+   
+
+   <script>
+    function checkButton() {  
+        if(document.getElementById('One-Way').checked) 
+        { 
+        document.getElementById("newmine1").disabled=true; 
+         
+        document.getElementById("Section1").style.display = "block";
+        
+       } 
+        else if(document.getElementById( 'Round-Trip').checked) 
+     { 
+     document.getElementById("newmine1").disabled=false ; 
+      
+     document.getElementById("Section1").style.display = "block";
+        
+     } 
+     else { 
+         document.getElementById("error").innerHTML  = "You have not selected a destination"; 
+      } 
+                                          
+ }        
+
+
+          
+               function Validpassword()
+              {
+                let password1=document.myform.pass1.value; 
+                 let cpassword1=document.myform.cpass1.value;
+                 if (password1.length<6)
+                        {
+                           alert( "Enter your Password")
+                           return false;
+                        }
+                 if (password1==cpassword1) 
+                        {
+                           return true;
+                        }
+                     else 
+                          {
+                            alert( "Confirm Password")
+                            return false;
+                          }    
+                let user1=document.myform.myname.value;                 
+                 let username=document.getElementById("newmine").value;
+                 
+                 if (username == null || username == "")
+                        {
+                           alert( "Enter correct Name");
+                           return false;
+                        }
+                        
+      
+                        
+                 
+
+                let attherate=mymail.indexOf("@");
+                let atthedot=mymail.lastIndexOf(".");
+
+                if (attherate<1 || atthedot<attherate+2 || atthedot>=mymail.length)
+                  {
+                     alert( "Enter the correct email");
+                     return false;
+                  }
+                  let curdate=new Date();
+                  let dob2=Date(document.myform.mydate.value)
+
+                   if (dob2>curdate)
+                        {
+                           alert( "Enter the correct DOB");
+                           return false;
+                        }
+                   
+                        let currdate=new Date();
+                        let dept=Date(document.myform.mydate.value)
+                        if (dept>curdate){
+                          alert( "Enter the correct date");
+                           return false;
+                        }
+
+
+                        let mobile1=(document.myform.mobile.value)
+
+                    if (mobile1.length==10)
+                   {
+                     return true;
+                   }
+                 else      
+                   {
+                     alert( "Enter the correct phone number");
+                     return false;
+                  }
+  }
+
+</script>
+  </body>
+
+</form>
+
+</html>
+

@@ -1,0 +1,72 @@
+<html>
+    <head>
+      <script type="text/javascript">
+         window.alert ("Welcome to Our Website")
+        
+      </script>
+       
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body >
+      <form name="myform" onsubmit="return username()" action="file2.html" method="get">
+      
+        <div >
+          <h1 style="text-align:center">Travel Experiences With Emirates</h1><br>
+          <img alt="emirates" src="emirates1.jpg" ><br><br><br>
+          </div>
+           <div id="page">
+            <h2>Enter Name: <input type="text" name="myname" id="newmine" pattern="[a-zA-Z]{3,}" title="Only Alphabets with minimum three"></h2>
+            <h2>Password: <input type="password" name="pass1" required></h2> 
+            <h2>Confirm Password: <input type="password"  name="cpass1"></h2>
+            <h2>Enter Email: <input type="text" name="myemail" id="newmine" ></h2>
+            <a href="file2.html"><button > <h2>Click Next </h2></button></a>
+           
+         </div>
+         
+          <script>  
+          
+      
+       
+         function username()
+              {
+                 let password1=document.myform.pass1.value;
+                 let cpassword1=document.myform.cpass1.value;
+                 if (password1.length<6)
+                        {
+                           alert( "Invalid Password")
+                           return false;
+                        }
+                 if (password1==cpassword1) 
+                        {
+                           return true;
+                        }
+                     else 
+                          {
+                            alert( "Confirm Password")
+                            return false;
+                          }                     
+                 let username=document.getElementById("newmine").value;
+                 
+                 if (username == null || username == "")
+                        {
+                           alert( "User Name Invalid");
+                           return false;
+                        }
+                        if(username == true)
+                  {
+                     return true;
+                  }
+
+                let attherate=mymail.indexOf("@");
+                let atthedot=mymail.lastIndexOf(".");
+
+                if (attherate<1 || atthedot<attherate+2 || atthedot>=mymail.length)
+                  {
+                     alert( "Enter the correct Email");
+                     return false;
+                  }
+               }
+        </script>
+        </body>
+      </form>
+</html>

@@ -1,0 +1,142 @@
+<html>
+   <head>
+<style>
+   #Section2{display: none};
+</style>
+   </head>
+
+   <body>
+
+
+
+     <h1>Create Form</h1>
+     <form name="myform" onsubmit="return Validpassword()" action="newHTML.html" method="post">
+
+
+
+      <div id="Section1">
+      
+      
+<br><b> Choose your destination: </b><br>
+<input type="radio" name="one" id="Sydney" value="Sydney" onclick=" checkButton()">one way<br> 
+<input type="radio" name="one" id="Melbourne" value="Melbourne"  onclick=" checkButton()" >round trip<br> 
+
+    
+<h3 id="disp" style= "color:green">               </h3>
+<h4 id="error" style= "color:red">                </h4>
+</div>        
+          
+<div id="Section2">
+    
+      
+      Enter your name: <input type="text" name="myname" id="newmine" pattern="[a-zA-Z]{3,}" title="Only Alphabets with minimum three">
+                          
+        Password: <input type="password" name="pass1"> <br><br>
+        Confirm Password:<input type="password"  name="cpass1"><br><br>
+                          
+        Enter your name: <input type="text" name="myemail" id="newmine" >
+        Enter your DOB: <input type="date" name="mydate" id="newmine">
+    
+        Enter your Mobile Number: <input type="number" name="mobile" id="newmine">
+        <input type="submit" value="Click Here">
+    
+    </div>      
+    </form>
+
+    <script>
+function checkButton() 
+                    {  
+                        if(document.getElementById('Sydney').checked) 
+                         { 
+                           document.getElementById("disp").innerHTML = document.getElementById("Sydney").value  + " radio button is checked"; 
+                           document.getElementById("Section2").style.display = "block";
+                          } 
+                        else if(document.getElementById('Melbourne').checked) 
+                             { 
+                               document.getElementById("disp").innerHTML = document.getElementById("Melbourne").value + " radio button is checked";   
+                               document.getElementById("Section2").style.display = "block";
+                              } 
+                                       else { 
+                                               document.getElementById("error").innerHTML 
+                                                   = "You have not selected a destination"; 
+                                            } 
+                          
+                                          } 
+    
+
+           function Validpassword()
+              {
+                 let password1=document.myform.pass1.value;
+                 let cpassword1=document.myform.cpass1.value;
+                 if (password1.length<6)
+                        {
+                           alert( "enter the 6 charcters")
+                           return false;
+                        }
+                 if (password1==cpassword1) 
+                        {
+                           return true;
+                        }
+                     else 
+                          {
+                            alert( "Both must be same")
+                            return false;
+                          }                     
+                         
+
+               let username=document.getElementById("newmine").value;
+                 
+                 if (username== "null" || username == "")
+                        {
+                           alert( "enter correctname");
+                           return false;
+                        }
+
+           let mymail=document.myform.myemail.value;
+           let attherate=mymail.indexOf("@");
+           let atthedot=mymail.lastIndexOf(".");
+
+           if (attherate<1 || atthedot<attherate+2 || atthedot>=mymail.length)
+                  {
+                     alert( "enter the correct email");
+                     return false;
+                  }
+
+            let curdate=new Date();
+                 let dob2=Date(document.myform.mydate.value)
+
+                 if (dob2>curdate)
+                        {
+                           alert( "enter the correct DOB");
+                           return false;
+                        }
+
+                        let mobile1=(document.myform.mobile.value)
+
+if (mobile1.length==10)
+    {
+       return true
+    }
+ else      
+        {
+          alert( "enter the correct 10 digits number");
+          return false;
+       }
+
+
+
+
+
+
+
+
+     } 
+
+    </script>
+   </body>
+
+
+
+
+</html>
+

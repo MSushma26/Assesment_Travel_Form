@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <style>
+            
+         #Section2{display: none};
+         
+   </style>
+        
+        <body>
+            <div id="Section1"> 
+                <h3 id="disp" style= "color:green">               </h3>
+                <h4 id="error" style= "color:red">                </h4>
+                </div>   
+    
+                
+            
+        
+            <input type="radio" name="one" id="One-Way" value="One-Way" onclick=" checkButton()">One-Way<br> <br>
+            <input type="radio" name="one" id="Round-Trip" value="Round-Trip"  onclick=" checkButton()" >Round-Trip<br> <br><br>
+    
+            
+                From:<select id="departure" name="departure" required>
+                    <option value=" ">   </option>
+                     <option value="melbourne">Melbourne(MEL),Australia</option>
+                     <option value="sydney">Sydney(SYD),Australia</option>
+                     <option value="brisbane">Brisbane(QLD),Australia</option>
+                     <option value="Adelaide">Adelaide(ADL),Australia</option>
+                     <option value="perth">Perth(PERT),Australia</option>
+                     </select>
+               To:<select id="departure" name="departure" required>
+                        <option value=" ">   </option>
+                        <option value="melbourne">Melbourne(MEL),Australia</option>
+                        <option value="sydney">Sydney(SYD),Australia</option>
+                        <option value="brisbane">Brisbane(QLD),Australia</option>
+                        <option value="Adelaide">Adelaide(ADL),Australia</option>
+                        <option value="perth">Perth(PERT),Australia</option>
+           
+                 
+                </select>
+
+                Departure Date:  <input type="date" class="spl" name="mydate" id="newmine"><br><br>
+                Return Date:  <input type="date" class="spl" name="mydate" id="newmine1">
+            
+              
+            
+
+     <script>
+     function checkButton() {  
+        if(document.getElementById('One-Way').checked) 
+        { 
+        document.getElementById("newmine1").disabled=true; 
+         
+        document.getElementById("Section1").style.display = "block";
+        
+       } 
+        else if(document.getElementById( 'Round-Trip').checked) 
+     { 
+     document.getElementById("newmine1").disabled=false ; 
+      
+     document.getElementById("Section1").style.display = "block";
+        
+     } 
+     else { 
+         document.getElementById("error").innerHTML  = "You have not selected a destination"; 
+      } 
+                                          
+ }        
+                  
+            </script> 
+                      
+        </body>
+    </head>
+</html>
